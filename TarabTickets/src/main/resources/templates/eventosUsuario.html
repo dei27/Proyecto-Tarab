@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta name="author" content="Deivi Campos">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TarabTickets</title>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}" defer></script>
+<script th:src="@{/webjars/bootstrap/5.2.3/js/popper.min.js}" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body class="bodyEventosUsuarios">
+<header class="sticky-top">
+		<nav class="navbar bg-body-tertiary bg-dark">
+		  <div class="container-fluid">
+		    <a class="navbar-brand text-white" th:href="@{/admin}">T A R A B T I C K E T S</a>
+		    <a class="navbar-toggler border-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+		      <i class="bi bi-list fs-2 text-white"></i>
+		    </a>
+		    <div class="offcanvas offcanvas-end w-25 text-center text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+		      <div class="offcanvas-header">
+		        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+		        <button type="button" class="btn-close text-bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		      </div>
+		      <div class="offcanvas-body">
+		        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+		          <li class="nav-item mb-3">
+		            <a class="btn w-100 p-3 btn-secondary" th:href="@{/user/eventosUsuario}">Mis eventos</a>
+		          </li>
+		          <li class="nav-item mb-3">
+		            <form th:action="@{/logout}" method="post">
+		         		<button type="submit" class="btn btn-warning w-100 p-3 text-white">Cerrar sesión</button>
+		        	</form>
+		          </li>
+		        </ul>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+	</header>
+	<main class="container mt-5">
+		<div th:if="${pedidos?.isEmpty()}">
+			<div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
+			  	<h3>Actualmente no has comprado eventos disponibles.</h3>
+			  <button type="button" class="btn-close fs-3" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
+		<div th:unless="${pedidos?.isEmpty()}">
+			<div class="container table-responsive py-5">
+		<!-- 	<hr class="border border-primary border-3 opacity-75"> -->
+				<table class="table table-dark table-hover display w-100">
+					<thead>
+						<tr class="table-primary">
+							<th class="text-center">Fecha de compra</th>
+				            <th class="text-center">Total</th>
+				            <th class="text-center">Cantidad</th>
+				            <th class="text-center">Nombre de la entrada</th>
+				            <th class="text-center">Nombre del evento</th>
+				            <th class="text-center">Fecha del evento</th>
+				            <th class="text-center">Nombre del lugar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="pedido : ${pedidos}" class="text-center">
+				            <td th:text="${#dates.format(pedido[0], 'dd/MM/yyyy HH:mm')}"></td>
+				            <td th:text="${pedido[1]}"></td>
+				            <td th:text="${pedido[2]}"></td>
+				            <td th:text="${pedido[3]}"></td>
+				            <td th:text="${pedido[4]}"></td>
+				            <td th:text="${#dates.format(pedido[5], 'dd/MM/yyyy')}"></td>
+				            <td th:text="${pedido[6]}"></td>
+				        </tr>
+					</tbody>
+				</table>
+			<a th:href="@{/usuario}" class="btn w-25 p-3 shadow my-5 bg-primary text-white" type="button">Regresar</a>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

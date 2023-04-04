@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bitter:ital,wght@0,200;1,400&family=Lato:ital,wght@0,400;1,300&family=Merriweather:wght@300;700&family=Montserrat+Alternates:wght@300;500&family=Oswald&family=PT+Sans+Caption:wght@700&family=Playfair+Display+SC:wght@700&family=Poppins:wght@300&family=Raleway:wght@300&family=Roboto+Slab:wght@200;500&family=Ubuntu+Mono:wght@400;700&display=swap');
+
+/* font-family: 'Abril Fatface', cursive; */
+/* font-family: 'Bitter', serif; */
+/* font-family: 'Lato', sans-serif; */
+/* font-family: 'Merriweather', serif; */
+/* font-family: 'Montserrat Alternates', sans-serif; */
+/* font-family: 'Oswald', sans-serif; */
+/* font-family: 'Playfair Display SC', serif; */
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'PT Sans Caption', sans-serif; */
+/* font-family: 'Raleway', sans-serif; */
+/* font-family: 'Roboto Slab', serif; */
+/* font-family: 'Ubuntu Mono', monospace; */
+
+* {
+	font-size: 1.2vw;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para la barra de desplazamiento vertical */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* Color del fondo de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray; /* Color de la parte desplazable de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ec2300; /* Color de la parte desplazable de la barra de desplazamiento cuando el cursor está sobre ella */
+}
+
+.bodyLogin {
+	background-image: url("/imgs/1.webp");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bodyFormEvento {
+	background-image: url("/imgs/4.webp");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bodyHomeAdmin {
+	background-image: url("/imgs/7.webp");
+}
+
+.bodyHomeUser{
+	background-image: url("/imgs/3.webp");
+}
+
+.bodyFormCompra{
+	background-image: url("/imgs/7.webp");
+}
+
+.bodyFacturaCompra, .bodyEventosUsuarios {
+	background-image: url("/imgs/5.webp");
+}
+
+.bodyHomeUser, .bodyFormCompra, .bodyFacturaCompra, .bodyHomeAdmin{
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+
+a{
+	color: white;
+}
+
+a:hover{
+	color: gray;
+}
+
+.formEvento{
+	background: rgba(0,0,0,0.5);
+}
+
+.card-header, .card-footer{
+	background: rgba(0,0,0,0.6);
+	color: white;
+}
+
+footer{
+	background: rgba(0,0,0,0.9);
+}
