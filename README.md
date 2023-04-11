@@ -9,3 +9,7 @@
 <p>La aplicación permite a los organizadores de eventos crear y publicar eventos, establecer precios y gestionar la venta de entradas. </p>
 
 <p>La aplicación está construida usando Spring Boot Maven, Hibernate, MySQL, Thymelaf, Bootstrap.</p>
+
+<h6 align="center"> Puedes ver una demo acá: https://youtu.be/QZ_FLJFUCSU </h6>
+
+
